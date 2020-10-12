@@ -4,7 +4,7 @@ from .controllers import insert_article_in_db, select_all_items
 bp = Blueprint("spa", __name__)
 
 
-@bp.route("/insert")
+@bp.route("/insert", methods=['POST'])
 def insert():
     content = request.json
     name = content["name"]
