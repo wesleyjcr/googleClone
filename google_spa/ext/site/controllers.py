@@ -7,4 +7,6 @@ def insert_article_in_db(name, body):
     db.session.add(article)
     db.session.commit()
     
-
+def select_all_items(name):
+    return Articles.query.filter(Articles.name.like(f'%{name}%')).all()
+    
